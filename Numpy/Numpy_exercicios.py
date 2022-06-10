@@ -33,4 +33,38 @@ print(arr)
 
 # Convert a 1D array to a 2D array with 2 rows
 arr = np.arange(10).reshape(2, 5)
-print(arr)
+print(arr, '\n')
+
+# Stack arrays a and b vertically
+a = np.arange(10).reshape(2, -1)
+b = np.repeat(1, 10).reshape(2, -1)
+
+# Answers
+# Method 1:
+c = np.concatenate([a, b], axis=0)
+print(c)
+
+# Method 2:
+np.vstack([a, b])
+
+# Method 3:
+c = np.r_[a, b]
+print(c)
+
+# Stack the arrays a and b horizontally.
+c = np.concatenate([a, b], axis=1)
+print(c)
+
+# Method 2:
+np.hstack([a, b])
+
+# Method 3:
+c = np.c_[a, b]
+
+# 10. How to generate custom sequences in numpy without hardcoding?
+# Create the following pattern without hardcoding. Use only numpy
+# functions and the below input array a.
+# INPUT:
+a = np.array([1, 2, 3])
+# Desired Output:
+# > array([1, 1, 1, 2, 2, 2, 3, 3, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])
