@@ -23,6 +23,15 @@ print(df, '\n')
 
 # DELETANDO UMA COLUNA
 print('#DELETANDO UMA COLUNA')
-# AXIS = 0 (INDEX)PADRÃO, AXIS = 1 (COLUNA)
-df = df.drop('X+Z', axis=1, inplace=True)
-print(df)
+# AXIS = 0 (INDEX)PADRÃO, AXIS = 1 (COLUNA),  se atentar a isso quando tiver que escolher entre deletar coluna ou índice
+df = df.drop('X+Z', axis=1)  # Atribuir o resultado da expreção a uma variável para salvar,
+# ou utilizar o parâmetro inplace=True, também altera o df original
+print(df, '\n')
+
+# LOCALIZAÇÃO DE ELEMENTOS POR ÍNCICE
+print(df.loc["A", "Z"], '\n')  # .loc['linha', 'coluna']
+print(df.loc[['A', 'B'], ['X', 'Y', 'Z']])
+
+print(df.iloc[1:4, 2:])  # Com .iloc[] é possível localizar data como no numpy
+
+
