@@ -47,11 +47,13 @@ print(sum(sal[sal['Year'] == 2013]['JobTitle'].value_counts() == 1), '\n')
 
 # Quantas pessoas tem a palavra chefe no seu cargo?
 
+
 def chief(x):
     if 'chief' in x.lower():
         return True
     else:
         return False
+
 
 chief = sal['JobTitle'].apply(chief)
 print(sum(chief))
